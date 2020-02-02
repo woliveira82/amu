@@ -6,5 +6,5 @@ def sqlite_path():
 
 ENV = 'production'
 DEBUG = False
-SQLALCHEMY_DATABASE_URI = 'sqlite:///{}storage.db'.format(sqlite_path())
+SQLALCHEMY_DATABASE_URI = f'sqlite:///{sqlite_path()}storage.db'
 SQLALCHEMY_TRACK_MODIFICATIONS = False

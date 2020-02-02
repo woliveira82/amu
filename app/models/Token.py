@@ -2,7 +2,7 @@ from app import db
 from app.inc import Dao
 
 
-class Tokens(db.Model, Dao):
+class Token(db.Model, Dao):
 
     __tablename__ = 'token'
     
