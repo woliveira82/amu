@@ -3,6 +3,8 @@ from app.inc import Dao
 
 
 class Tokens(db.Model, Dao):
+
+    __tablename__ = 'token'
     
     id = db.Column(db.Integer, primary_key=True)
     token = db.Column(db.String(32), unique=True)

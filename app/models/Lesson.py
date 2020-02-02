@@ -3,6 +3,8 @@ from app.inc import Dao
 
 
 class Lesson(db.Model, Dao):
+
+    __tablename__ = 'lesson'
     
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(256), unique=True)
