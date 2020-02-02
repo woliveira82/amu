@@ -29,4 +29,3 @@ class User(db.Model, Dao):
             'name': self.name,
             'last_name': self.last_name,
         }
-$2a$08$0SN/h83Gt1jZMR6924.Kd.HaK3MyTDt/W8FCjUOtbY3Pmres5rsma
