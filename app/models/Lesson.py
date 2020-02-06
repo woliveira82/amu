@@ -9,13 +9,13 @@ class Lesson(db.Model, Dao):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(256), unique=True)
     summary = db.Column(db.Text, nullable=False)
-    updated_at = db.Column(db.Date, nullable=False)
+    updated_at = db.Column(db.DateTime, nullable=False)
     body = db.Column(db.Text, nullable=False)
     order = db.Column(db.SmallInteger, nullable=False)
     course_id = db.Column(db.Integer, db.ForeignKey('course.id'), nullable=False)
 
 
-    def __init__(title, summary, updated_at, body, order, course_id, id=None):
+    def __init__(self, title, summary, updated_at, body, order, course_id, id=None):
         self.id = id
         self.title = title
         self.summary = summary

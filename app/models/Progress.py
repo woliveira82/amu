@@ -9,7 +9,7 @@ class Progress(db.Model, Dao):
     id = db.Column(db.Integer, primary_key=True)
     participation_id = db.Column(db.Integer, db.ForeignKey('participation.id'), nullable=False)
     lesson_id = db.Column(db.Integer, db.ForeignKey('lesson.id'), nullable=False)
-    finished_at = db.Column(db.Date, default=None)
+    finished_at = db.Column(db.DateTime, default=None)
 
 
     def __init__(self, user_id, course_id, bought_at, started_at, last_participation, id=None):

@@ -13,7 +13,7 @@ class Token(db.Model, Dao):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
 
-    def __init__(token, expires_at, action, user_id, id=None):
+    def __init__(self, token, expires_at, action, user_id, id=None):
         self.id = id
         self.token = token
         self.expires_at = expires_at

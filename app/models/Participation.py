@@ -9,9 +9,9 @@ class Participation(db.Model, Dao):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     course_id = db.Column(db.Integer, db.ForeignKey('course.id'), nullable=False)
-    bought_at = db.Column(db.Date, default=None)
-    started_at = db.Column(db.Date, default=None)
-    last_participation = db.Column(db.Date)
+    bought_at = db.Column(db.DateTime, default=None)
+    started_at = db.Column(db.DateTime, default=None)
+    last_participation = db.Column(db.DateTime, default=None)
 
 
     def __init__(self, user_id, course_id, bought_at, started_at, last_participation, id=None):

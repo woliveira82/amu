@@ -12,12 +12,13 @@ class Course(db.Model, Dao):
     open = db.Column(db.Boolean, nullable=False, default=False)
     access = db.Column(db.SmallInteger, nullable=False)
     cost = db.Column(db.Float, nullable=False)
-    open_at = db.Column(db.Date, nullable=False)
+    open_at = db.Column(db.DateTime, nullable=False)
+    close_at = db.Column(db.DateTime, default=None)
     active = db.Column(db.Boolean, nullable=False, default=True)
     owner_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
 
-    def __init__(name, summary, open, access, cost, open_at, active, owner_id, id=None):
+    def __init__(self, name, summary, open, access, cost, open_at, active, owner_id, close_at=None, id=None):
         self.id = id
         self.name = name
         self.summary = summary
@@ -25,6 +26,7 @@ class Course(db.Model, Dao):
         self.access = access
         self.cost = cost
         self.open_at = open_at
+        self.close_at = close_at
         self.active = active
         self.owner_id = owner_id
 
@@ -38,6 +40,7 @@ class Course(db.Model, Dao):
             'access': self.access,
             'cost': self.cost,
             'open_at': self.open_at,
+            'close_at': self.close_at,
             'active': self.active,
             'owner_id': self.owner_id,
         }
