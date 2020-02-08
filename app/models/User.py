@@ -48,3 +48,10 @@ class User(db.Model, Dao):
         }
         token = Token(**token_data)
         token.create()
+
+
+    @classmethod
+    def login(cls, email, password):
+        instance = cls.query.filter_by(email=email, password=password, active=True).first()
+        db.session.close()
+        return instance
