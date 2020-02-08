@@ -55,3 +55,13 @@ class User(db.Model, Dao):
         instance = cls.query.filter_by(email=email, password=password, active=True).first()
         db.session.close()
         return instance
+
+
+    def change_password(self, password):
+        token_data = {
+            'action': 2,
+            'user_id': self.id,
+            'password': password,
+        }
+        token = Token(**token_data)
+        token.create()
