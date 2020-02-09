@@ -1,7 +1,8 @@
 from flask.views import MethodView
-from app.models import User
 from flask_restful import reqparse
-from app.inc import Response, Functions
+
+from app.inc import Functions, Response
+from app.models import User
 from exception import ResponseException
 
 

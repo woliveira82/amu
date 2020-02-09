@@ -1,7 +1,8 @@
+from datetime import datetime, timedelta
+from secrets import token_urlsafe
+
 from app import db
 from app.inc import Dao
-from secrets import token_urlsafe
-from datetime import datetime, timedelta
 
 
 class Token(db.Model, Dao):

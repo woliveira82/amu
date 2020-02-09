@@ -1,8 +1,8 @@
-from app import db
-from app.inc import Dao
-from . import Token
 from datetime import datetime
 
+from app import db
+from app.inc import Dao
+from app.models.token import Token
 
 class User(db.Model, Dao):
 
