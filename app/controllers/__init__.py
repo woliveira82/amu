@@ -1,5 +1,10 @@
 from app import app
+from .email_view import EmailView
 from .UserView import UserView
+
+view_email = EmailView.as_view('email')
+app.add_url_rule('/email', view_func=view_email, methods=['POST'])
+
 
 view_user = UserView.as_view('user')
 app.add_url_rule('/users', view_func=view_user, methods=['POST'])
